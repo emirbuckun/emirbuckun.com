@@ -6,6 +6,8 @@ import { absoluteUrl, cn } from "@/lib/utils";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layouts/nav";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://emirbuckun.com"),
@@ -93,7 +95,8 @@ export default function RootLayout({
             <main className="flex-1">{children}</main>
           </div>
           <TailwindIndicator />
-          {/* TODO: Add Vercel Analytics and Speed Insights */}
+          <SpeedInsights />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
