@@ -1,5 +1,5 @@
 export function TailwindIndicator() {
-  // TODO: return null when not in development mode;
+  if (process.env.IS_PRODUCTION === "true") return null;
   return (
     <div className="fixed bottom-1 left-1 z-50 flex size-6 items-center justify-center rounded-full bg-gray-900 p-3 font-mono text-xs text-white">
       <div className="block sm:hidden">xs</div>
