@@ -1,18 +1,23 @@
-import * as React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import swim from "@/../public/images/home/swim.jpg";
+import setup from "@/../public/images/home/setup.jpg";
+import coding from "@/../public/images/home/coding.jpg";
 import fitness from "@/../public/images/home/fitness.jpg";
 import running from "@/../public/images/home/running.jpg";
 import presentation from "@/../public/images/home/presentation.jpg";
-import setup from "@/../public/images/home/setup.jpg";
-import coding from "@/../public/images/home/coding.jpg";
 
+import { Suspense } from "react";
 import { Shell } from "@/components/shell";
+import { siteConfig } from "@/config/site";
+import { getProjects } from "@/lib/actions/github";
 import { LinkBadge } from "@/components/link-badge";
+import { ProjectCard } from "@/components/cards/project-card";
+import { ProjectCardSkeleton } from "@/components/skeletons/project-card-skeleton";
 
 export default function Home() {
   return (
-    <Shell variant="markdown">
+    <Shell variant="markdown" className="pb-10 md:pb-12">
       <section className="prose prose-zinc dark:prose-invert">
         <h2 className="text-xl font-semibold">hey, {`I'm`} Emir 👋</h2>
         <p className="leading-loose">
@@ -22,10 +27,10 @@ export default function Home() {
             OBSS Technology
           </LinkBadge>
           . I am also a hybrid athlete who is interested in several sports
-          including running, cycling, swimming, and weightlifting.
+          including running, cycling, swimming and weightlifting.
         </p>
       </section>
-      <div className="grid grid-cols-2 grid-rows-4 sm:grid-rows-3 sm:grid-cols-3 gap-4 my-4">
+      <section className="grid grid-cols-2 grid-rows-4 sm:grid-rows-3 sm:grid-cols-3 gap-4 my-4">
         <div className="relative h-40">
           <Image
             alt="My setup"
@@ -86,7 +91,63 @@ export default function Home() {
             className="rounded-lg object-cover"
           />
         </div>
-      </div>
+      </section>
+      <section className="prose prose-zinc dark:prose-invert">
+        <p className="leading-loose">
+          This is my personal website where I share my thoughts, skills,
+          experiences, training logs and projects. I built this site using{" "}
+          <LinkBadge aria-label="Next.js" href="https://nextjs.org/">
+            Next.js
+          </LinkBadge>
+          ,{" "}
+          <LinkBadge aria-label="Tailwind CSS" href="https://tailwindcss.com/">
+            Tailwind CSS
+          </LinkBadge>{" "}
+          and{" "}
+          <LinkBadge aria-label="shadcn/ui" href="https://ui.shadcn.com/">
+            shadcn/ui
+          </LinkBadge>
+          . You can find the source code of this site on{" "}
+          <LinkBadge aria-label="GitHub" href={siteConfig.links.github}>
+            GitHub
+          </LinkBadge>
+          .
+        </p>
+      </section>
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold">
+          <Link
+            href={siteConfig.links.githubProfile}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground/90 no-underline transition-colors hover:text-foreground"
+          >
+            projects
+            <span className="sr-only">Projects</span>
+          </Link>
+        </h2>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <Suspense
+            fallback={Array.from({ length: 4 }).map((_, i) => (
+              <ProjectCardSkeleton key={i} />
+            ))}
+          >
+            <Projects />
+          </Suspense>
+        </div>
+      </section>
     </Shell>
+  );
+}
+
+async function Projects() {
+  const projects = await getProjects({ count: 4 });
+
+  return (
+    <>
+      {projects?.map((project) => (
+        <ProjectCard key={project.name} project={project} />
+      ))}
+    </>
   );
 }
