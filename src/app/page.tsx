@@ -17,7 +17,7 @@ import { ProjectCardSkeleton } from "@/components/skeletons/project-card-skeleto
 
 export default function Home() {
   return (
-    <Shell variant="markdown" className="pb-10 md:pb-12">
+    <Shell>
       <section className="prose prose-zinc dark:prose-invert">
         <h2 className="text-xl font-semibold">hey, {`I'm`} Emir 👋</h2>
         <p className="leading-loose">
@@ -122,8 +122,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="text-foreground/90 no-underline transition-colors hover:text-foreground"
           >
-            projects
-            <span className="sr-only">Projects</span>
+            projects<span className="sr-only">Projects</span>
           </Link>
         </h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
