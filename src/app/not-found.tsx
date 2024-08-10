@@ -7,7 +7,7 @@ export default function NotFound() {
     <Shell>
       <section className="prose prose-zinc dark:prose-invert">
         <h2 className="text-xl font-semibold">
-          Oh no! This page {"doesn't"} exist.
+          Oh no! This page doesn’t exist.
         </h2>
         <p className="leading-loose">
           If you expected to see something here, let me know{" "}

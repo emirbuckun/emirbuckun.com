@@ -19,10 +19,10 @@ export default function Home() {
   return (
     <Shell>
       <section className="prose prose-zinc dark:prose-invert">
-        <h2 className="text-xl font-semibold">hey, {`I'm`} Emir 👋</h2>
+        <h2 className="text-xl font-semibold">hey, I’m Emir 👋</h2>
         <p className="leading-loose">
-          {`I'm`} a full-stack developer and hybrid athlete from Istanbul,
-          Turkey. I currently work as a software developer at{" "}
+          I’m a full-stack developer and hybrid athlete from Istanbul, Turkey. I
+          currently work as a software developer at{" "}
           <LinkBadge aria-label="OBSS Technology" href="https://obss.tech/en/">
             OBSS Technology
           </LinkBadge>
