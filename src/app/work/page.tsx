@@ -1,6 +1,12 @@
+import Link from "next/link";
+
 import type { Metadata } from "next";
 import { Shell } from "@/components/shell";
-import Link from "next/link";
+import { siteConfig } from "@/config/site";
+import { Suspense } from "react";
+import { ProjectCardSkeleton } from "@/components/skeletons/project-card-skeleton";
+import { getProjects } from "@/lib/actions/github";
+import { ProjectCard } from "@/components/cards/project-card";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -72,6 +78,39 @@ export default function WorkPage() {
           updates.
         </p>
       </section>
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold">
+          <Link
+            href={siteConfig.links.githubProfile}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground/90 no-underline transition-colors hover:text-foreground"
+          >
+            projects<span className="sr-only">Projects</span>
+          </Link>
+        </h2>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <Suspense
+            fallback={Array.from({ length: 4 }).map((_, i) => (
+              <ProjectCardSkeleton key={i} />
+            ))}
+          >
+            <Projects />
+          </Suspense>
+        </div>
+      </section>
     </Shell>
+  );
+}
+
+async function Projects() {
+  const projects = await getProjects({ count: 4 });
+
+  return (
+    <>
+      {projects?.map((project) => (
+        <ProjectCard key={project.name} project={project} />
+      ))}
+    </>
   );
 }

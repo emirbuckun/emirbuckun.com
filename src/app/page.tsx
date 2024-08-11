@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import swim from "@/../public/images/home/swim.jpg";
 import setup from "@/../public/images/home/setup.jpg";
@@ -7,13 +6,9 @@ import fitness from "@/../public/images/home/fitness.jpg";
 import running from "@/../public/images/home/running.jpg";
 import presentation from "@/../public/images/home/presentation.jpg";
 
-import { Suspense } from "react";
 import { Shell } from "@/components/shell";
 import { siteConfig } from "@/config/site";
-import { getProjects } from "@/lib/actions/github";
 import { LinkBadge } from "@/components/link-badge";
-import { ProjectCard } from "@/components/cards/project-card";
-import { ProjectCardSkeleton } from "@/components/skeletons/project-card-skeleton";
 
 export default function Home() {
   return (
@@ -114,39 +109,6 @@ export default function Home() {
           .
         </p>
       </section>
-      <section className="space-y-4">
-        <h2 className="text-xl font-semibold">
-          <Link
-            href={siteConfig.links.githubProfile}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-foreground/90 no-underline transition-colors hover:text-foreground"
-          >
-            projects<span className="sr-only">Projects</span>
-          </Link>
-        </h2>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <Suspense
-            fallback={Array.from({ length: 4 }).map((_, i) => (
-              <ProjectCardSkeleton key={i} />
-            ))}
-          >
-            <Projects />
-          </Suspense>
-        </div>
-      </section>
     </Shell>
-  );
-}
-
-async function Projects() {
-  const projects = await getProjects({ count: 4 });
-
-  return (
-    <>
-      {projects?.map((project) => (
-        <ProjectCard key={project.name} project={project} />
-      ))}
-    </>
   );
 }
