@@ -19,10 +19,11 @@ export default function WorkPage() {
       <section className="prose prose-zinc dark:prose-invert">
         <h2 className="text-xl font-semibold">my work</h2>
         <p className="leading-loose">
-          I am a full-stack developer with a strong passion for web development.
-          I enjoy creating web applications using modern technologies and
-          frameworks. I have experience in both front-end and back-end
-          development. Here’s a summary of my work to date.
+          I am a full-stack developer with a strong passion for{" "}
+          <strong>web development</strong>. I enjoy creating web applications
+          using modern technologies and frameworks. I have experience in both
+          front-end and back-end development. Here’s a summary of my work to
+          date.
         </p>
       </section>
       <section className="prose prose-zinc dark:prose-invert">
@@ -37,12 +38,14 @@ export default function WorkPage() {
           </Link>
         </h2>
         <p className="text-zinc-600 dark:text-zinc-400 text-sm">
-          Software Developer
+          Software Developer, 2023 — Present
         </p>
         <p className="leading-loose">
-          I worked on developing responsive and accessible web applications
-          using modern front-end and back-end technologies. On the front-end, I
-          utilized <strong>React, Next.js, and Tailwind CSS</strong> to create
+          Firstly, I worked as an intern and then I was hired as a part-time
+          software developer at OBSS Technology. I worked on developing
+          responsive and accessible web applications using modern front-end and
+          back-end technologies. On the front-end, I utilized{" "}
+          <strong>React, Next.js, and Tailwind CSS</strong> to create
           user-friendly and efficient interfaces. On the back-end, I employed{" "}
           <strong>C# and .NET Core</strong> to develop RESTful APIs and
           microservices. I also managed databases using{" "}
@@ -86,7 +89,7 @@ export default function WorkPage() {
             rel="noopener noreferrer"
             className="text-foreground/90 no-underline transition-colors hover:text-foreground"
           >
-            projects<span className="sr-only">Projects</span>
+            projects<span className="sr-only">projects</span>
           </Link>
         </h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
