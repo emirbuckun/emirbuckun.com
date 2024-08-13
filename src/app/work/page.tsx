@@ -102,6 +102,14 @@ export default function WorkPage() {
           </Suspense>
         </div>
       </section>
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold">
+          techs<span className="sr-only">techs</span>
+        </h2>
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+          {/* TODO: Add tech cards */}
+        </div>
+      </section>
     </Shell>
   );
 }

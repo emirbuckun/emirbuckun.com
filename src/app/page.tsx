@@ -9,6 +9,7 @@ import presentation from "@/../public/images/home/presentation.jpg";
 import { Shell } from "@/components/shell";
 import { siteConfig } from "@/config/site";
 import { LinkBadge } from "@/components/link-badge";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -17,11 +18,26 @@ export default function Home() {
         <h2 className="text-xl font-semibold">hey, I’m Emir 👋</h2>
         <p className="leading-loose">
           I’m a full-stack developer and hybrid athlete from Istanbul, Turkey. I
-          currently work as a software developer at{" "}
+          currently{" "}
+          <Link
+            href="/work"
+            rel="noopener noreferrer"
+            className="text-foreground/90 no-underline transition-colors hover:text-foreground"
+          >
+            work
+          </Link>{" "}
+          as a software developer at{" "}
           <LinkBadge aria-label="OBSS Technology" href="https://obss.tech/en/">
             OBSS Technology
           </LinkBadge>
-          . I am also a hybrid athlete who is interested in several sports
+          . I am also a hybrid athlete who is interested in several{" "}
+          <Link
+            href="/sport"
+            rel="noopener noreferrer"
+            className="text-foreground/90 no-underline transition-colors hover:text-foreground"
+          >
+            sports
+          </Link>{" "}
           including running, cycling, swimming and weightlifting.
         </p>
       </section>
