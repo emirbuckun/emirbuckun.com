@@ -17,7 +17,7 @@ export default function WorkPage() {
   return (
     <Shell>
       <section className="prose prose-zinc dark:prose-invert">
-        <h2 className="text-xl font-semibold">my work</h2>
+        <h2 className="text-xl font-semibold">wor</h2>
         <p className="leading-loose">
           I am a full-stack developer with a strong passion for{" "}
           <strong>web development</strong>. I enjoy creating web applications

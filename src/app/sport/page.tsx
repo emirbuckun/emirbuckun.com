@@ -10,7 +10,7 @@ export default function SportPage() {
   return (
     <Shell>
       <section className="prose prose-zinc dark:prose-invert">
-        <h2 className="text-xl font-semibold">my sports</h2>
+        <h2 className="text-xl font-semibold">sport</h2>
         <p className="leading-loose">
           Sports are a major passion of mine and an integral part of my life. I
           thoroughly enjoy engaging in various athletic disciplines and
