@@ -7,6 +7,8 @@ import { Suspense } from "react";
 import { ProjectCardSkeleton } from "@/components/skeletons/project-card-skeleton";
 import { getProjects } from "@/lib/actions/github";
 import { ProjectCard } from "@/components/cards/project-card";
+import { TechCard } from "@/components/cards/tech-card";
+import { techs } from "@/constants/techs";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -17,7 +19,7 @@ export default function WorkPage() {
   return (
     <Shell>
       <section className="prose prose-zinc dark:prose-invert">
-        <h2 className="text-xl font-semibold">wor</h2>
+        <h2 className="text-xl font-semibold">my work</h2>
         <p className="leading-loose">
           I am a full-stack developer with a strong passion for{" "}
           <strong>web development</strong>. I enjoy creating web applications
@@ -107,7 +109,7 @@ export default function WorkPage() {
           techs<span className="sr-only">techs</span>
         </h2>
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          {/* TODO: Add tech cards */}
+          <Techs />
         </div>
       </section>
     </Shell>
@@ -116,11 +118,20 @@ export default function WorkPage() {
 
 async function Projects() {
   const projects = await getProjects({ count: 4 });
-
   return (
     <>
       {projects?.map((project) => (
         <ProjectCard key={project.name} project={project} />
+      ))}
+    </>
+  );
+}
+
+async function Techs() {
+  return (
+    <>
+      {techs?.map((tech) => (
+        <TechCard key={tech.name} tech={tech} />
       ))}
     </>
   );

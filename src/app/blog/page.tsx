@@ -10,7 +10,7 @@ export default function SportPage() {
   return (
     <Shell>
       <section className="prose prose-zinc dark:prose-invert">
-        <h2 className="text-xl font-semibold">blog</h2>
+        <h2 className="text-xl font-semibold">my blog</h2>
         <p className="leading-loose">
           I believe in the power of an active lifestyle to fuel creativity and
           productivity. My blog is a space where I share insights and
