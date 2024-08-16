@@ -22,11 +22,11 @@ export function TechCard({ tech }: TechCardProps) {
           <Image
             src={`/icons/${tech.icon}`}
             alt={tech.name ?? "Tech icon"}
-            width={48}
-            height={48}
-            className="w-12 h-12 mx-auto mb-4"
+            width={25}
+            height={25}
+            className="mx-auto mb-2"
           />
-          <CardTitle className="text-center">{tech.name}</CardTitle>
+          <CardTitle className="text-sm text-center">{tech.name}</CardTitle>
         </CardHeader>
       </Link>
     </Card>
