@@ -21,7 +21,7 @@ export default function WorkPage() {
       <section className="prose prose-zinc dark:prose-invert">
         <h2 className="text-xl font-semibold">my work</h2>
         <p className="leading-loose">
-          I am a full-stack developer with a strong passion for{" "}
+          I am a full-stack software developer with a strong passion for{" "}
           <strong>web development</strong>. I enjoy creating web applications
           using modern technologies and frameworks. I have experience in both
           front-end and back-end development. Here’s a summary of my work to

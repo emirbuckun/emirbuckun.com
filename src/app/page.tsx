@@ -7,7 +7,6 @@ import running from "@/../public/images/home/running.jpg";
 import presentation from "@/../public/images/home/presentation.jpg";
 
 import { Shell } from "@/components/shell";
-import { siteConfig } from "@/config/site";
 import { LinkBadge } from "@/components/link-badge";
 import Link from "next/link";
 
@@ -17,7 +16,7 @@ export default function Home() {
       <section className="prose prose-zinc dark:prose-invert">
         <h2 className="text-xl font-semibold">hey, I’m Emir 👋</h2>
         <p className="leading-loose">
-          I’m a full-stack developer and hybrid athlete from Istanbul, Turkey. I
+          I’m a full-stack software developer and hybrid athlete from Istanbul, Turkey. I
           currently{" "}
           <Link
             href="/work"
@@ -38,7 +37,7 @@ export default function Home() {
           >
             sports
           </Link>{" "}
-          including running, cycling, swimming and weightlifting.
+          including running, swimming, fitness and CrossFit.
         </p>
       </section>
       <section className="grid grid-cols-2 grid-rows-4 sm:grid-rows-3 sm:grid-cols-3 gap-4 my-4">
@@ -118,11 +117,15 @@ export default function Home() {
           <LinkBadge aria-label="shadcn/ui" href="https://ui.shadcn.com/">
             shadcn/ui
           </LinkBadge>
-          . You can find the source code of this site on{" "}
-          <LinkBadge aria-label="GitHub" href={siteConfig.links.github}>
-            GitHub
-          </LinkBadge>
-          .
+          . I am also using{" "}
+          <LinkBadge
+            aria-label="Vercel"
+            href="https://vercel.com/"
+            className="text-foreground/90 no-underline transition-colors hover:text-foreground"
+          >
+            Vercel
+          </LinkBadge>{" "}
+          for hosting.
         </p>
       </section>
     </Shell>
