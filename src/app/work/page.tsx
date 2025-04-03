@@ -2,11 +2,6 @@ import Link from "next/link";
 
 import type { Metadata } from "next";
 import { Shell } from "@/components/shell";
-import { siteConfig } from "@/config/site";
-import { Suspense } from "react";
-import { ProjectCardSkeleton } from "@/components/skeletons/project-card-skeleton";
-import { getProjects } from "@/lib/actions/github";
-import { ProjectCard } from "@/components/cards/project-card";
 import { TechCard } from "@/components/cards/tech-card";
 import { techs } from "@/constants/techs";
 
@@ -21,11 +16,11 @@ export default function WorkPage() {
       <section className="prose prose-zinc dark:prose-invert">
         <h2 className="text-xl font-semibold">my work</h2>
         <p className="leading-loose">
-          I am a full-stack software developer with a strong passion for{" "}
+          I am a <strong>full-stack software developer</strong> with a strong passion for{" "}
           <strong>web development</strong>. I enjoy creating web applications
           using modern technologies and frameworks. I have experience in both
-          front-end and back-end development. Here’s a summary of my work to
-          date.
+          <strong> front-end</strong> and <strong>back-end</strong> development.
+          Here’s a summary of my work to date.
         </p>
       </section>
       <section className="prose prose-zinc dark:prose-invert">
@@ -40,20 +35,23 @@ export default function WorkPage() {
           </Link>
         </h2>
         <p className="text-zinc-600 dark:text-zinc-400 text-sm">
-          Software Developer, 2023 — Present
+          Software Developer | April 2025 — Present | Full-Time
+        </p>
+        <p className="leading-loose"></p>
+        <p className="text-zinc-600 dark:text-zinc-400 text-sm">
+          Software Developer | November 2023 — March 2025 | Part-time
         </p>
         <p className="leading-loose">
-          Firstly, I worked as an intern and then I was hired as a part-time
-          software developer at OBSS Technology. I worked on developing
-          responsive and accessible web applications using modern front-end and
-          back-end technologies. On the front-end, I utilized{" "}
-          <strong>React, Next.js, and Tailwind CSS</strong> to create
-          user-friendly and efficient interfaces. On the back-end, I employed{" "}
-          <strong>C# and .NET Core</strong> to develop RESTful APIs and
-          microservices. I also managed databases using{" "}
-          <strong>SQL Server and PostgreSQL</strong>. Additionally, I gained
-          experience in containerizing applications using{" "}
-          <strong>Docker</strong> while working with these technologies.
+          Managed the full development cycle of a <strong>web-based notification system</strong> with <strong>multi-channel dispatch</strong>. Built <strong>.NET microservices</strong> and <strong>Next.js app</strong> using <strong>React, TailwindCSS, Typescript, shadcn/ui</strong>.
+        </p>
+        <p className="text-zinc-600 dark:text-zinc-400 text-sm">
+          .NET Developer Intern | July 2023 — September 2023 | Internship
+        </p>
+        <p className="leading-loose">
+          Received comprehensive training and developed projects that align with my skills. Created web APIs using <strong>.NET</strong> and built front-end applications with <strong>React</strong>. Gained hands-on experience in <strong>front-end</strong> and <strong>back-end</strong> development.
+        </p>
+        <p className="leading-loose">
+          Achieved <strong>first place</strong> in the <strong>final project competition</strong> among internship program participants and received a <strong>part-time job offer</strong>.
         </p>
       </section>
       <section className="prose prose-zinc dark:prose-invert">
@@ -68,40 +66,71 @@ export default function WorkPage() {
           </Link>
         </h2>
         <p className="text-zinc-600 dark:text-zinc-400 text-sm">
-          Software Developer Intern, 2020 — 2023
+          Software Developer Intern | July 2020 — June 2023 | Part-time
         </p>
         <p className="leading-loose">
-          At Eksim Holding, I contributed to the development and maintenance of
-          web applications by working on both front-end and back-end tasks. I
-          used <strong>HTML/CSS, JavaScript, JQuery, Bootstrap</strong> to
-          design intuitive and effective user interfaces on the front-end. On
-          the back-end, I utilized <strong>C# and .NET Framework/Core</strong>{" "}
-          to build and refine backend services and RESTful APIs. My role also
-          involved managing databases with{" "}
-          <strong>SQL Server, PostgreSQL and Oracle</strong>. Additionally, I
-          addressed issues in existing projects and implemented necessary
-          updates.
+          Developed and maintained <strong>web applications</strong>, working on both <strong>front-end</strong> and <strong>back-end</strong> tasks. I used <strong>HTML/CSS, JavaScript, JQuery, Bootstrap</strong> for the front-end and <strong>C# and .NET Framework/Core</strong> for the back-end. I also managed databases like <strong>SQL Server, PostgreSQL, and Oracle</strong> and resolved issues in existing projects.
         </p>
       </section>
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold">
-          <Link
-            href={siteConfig.links.githubProfile}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-foreground/90 no-underline transition-colors hover:text-foreground"
-          >
-            projects<span className="sr-only">projects</span>
-          </Link>
-        </h2>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <Suspense
-            fallback={Array.from({ length: 4 }).map((_, i) => (
-              <ProjectCardSkeleton key={i} />
-            ))}
-          >
-            <Projects />
-          </Suspense>
+
+        <h2 className="text-xl font-semibold">projects</h2>
+        <div className="space-y-4">
+          <div>
+            <p className="text-zinc-600 dark:text-zinc-400 text-sm">
+              Announcement Publisher (OBSS)
+            </p>
+            <p className="leading-loose">
+              Developed a dynamic announcement publishing system to manage and distribute announcements across multiple channels.
+            </p>
+          </div>
+          <div>
+            <p className="text-zinc-600 dark:text-zinc-400 text-sm">
+              <Link
+                href="https://marmaramusas.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-600 dark:text-zinc-400 text-sm underline transition-colors"
+              >
+                marmaramusas.com
+              </Link> (Freelance)
+            </p>
+            <p className="leading-loose">
+              Developed a website for a school club (Marmara Underwater Sports Club) to provide comprehensive information about the club’s activities, members, and events.
+            </p>
+          </div>
+          <div>
+            <p className="text-zinc-600 dark:text-zinc-400 text-sm">
+              Talep Portal (Eksim)
+            </p>
+            <p className="leading-loose">
+              Collaborated on developing a request management system. Implemented an approval workflow with role-based access, and created a responsive user interface.
+            </p>
+          </div>
+          <div>
+            <p className="text-zinc-600 dark:text-zinc-400 text-sm">
+              BiFikrimVar (Eksim)
+            </p>
+            <p className="leading-loose">
+              Worked on developing and maintaining an internal portal where employees share ideas, such as supporting idea submissions, approval workflows, voting, and feedback features.
+            </p>
+          </div>
+          <div>
+            <p className="text-zinc-600 dark:text-zinc-400 text-sm">
+              Dava Süreç Takip Yönetimi (Eksim)
+            </p>
+            <p className="leading-loose">
+              Built a lawsuit management portal for the legal department, providing seamless lawsuit tracking and reporting capabilities.
+            </p>
+          </div>
+          <div>
+            <p className="text-zinc-600 dark:text-zinc-400 text-sm">
+              Paket-Rapor Yönetimi (Eksim)
+            </p>
+            <p className="leading-loose">
+              Developed a full-stack web application from scratch to manage packages and reports for the business intelligence team. Implemented new database relationships and designed a user-friendly interface.
+            </p>
+          </div>
         </div>
       </section>
       <section className="space-y-4">
@@ -113,17 +142,6 @@ export default function WorkPage() {
         </div>
       </section>
     </Shell>
-  );
-}
-
-async function Projects() {
-  const projects = await getProjects({ count: 4 });
-  return (
-    <>
-      {projects?.map((project) => (
-        <ProjectCard key={project.name} project={project} />
-      ))}
-    </>
   );
 }
 
